@@ -21,5 +21,5 @@ function getGitHubPagesBase() {
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: process.env.GITHUB_ACTIONS ? getGitHubPagesBase() : "/",
+  base: process.env.PAGES_BASE || (process.env.GITHUB_ACTIONS ? getGitHubPagesBase() : "/"),
 });
